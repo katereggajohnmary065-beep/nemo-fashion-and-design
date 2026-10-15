@@ -1,0 +1,939 @@
+Style.css * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #050505;
+    color: white;
+    position: relative;
+    overflow-x: hidden;
+}
+
+body::before {
+
+    content: "";
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            circle at 20% 30%,
+            rgba(0, 229, 255, 0.08),
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 80% 70%,
+            rgba(0, 229, 255, 0.06),
+            transparent 25%
+        );
+
+    animation: backgroundMove 8s infinite alternate;
+
+    z-index: -1;
+}
+
+@keyframes backgroundMove {
+
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.2);
+    }
+
+}
+
+/* NAVIGATION */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(5, 5, 5, 0.95);
+    border-bottom: 1px solid #222;
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.logo span {
+    display: block;
+    font-size: 9px;
+    letter-spacing: 4px;
+    color: #aaa;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #00e5ff;
+}
+
+.cart {
+    font-size: 20px;
+}
+
+
+/* HERO */
+
+.hero {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+    padding: 80px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.small-title {
+    color: #00e5ff;
+    letter-spacing: 3px;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(50px, 8vw, 100px);
+    line-height: 0.95;
+    margin-bottom: 30px;
+}
+
+.hero h1 span,
+.about span {
+    color: #00e5ff;
+}
+
+.hero-text {
+    color: #aaa;
+    font-size: 18px;
+    line-height: 1.7;
+    max-width: 550px;
+}
+
+.hero-buttons {
+    margin-top: 35px;
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    display: inline-block;
+    background: #00e5ff;
+    color: black;
+    padding: 15px 25px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.btn.outline {
+    background: transparent;
+    color: white;
+    border: 1px solid #555;
+}
+
+.electric-circle {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    border: 2px solid #00e5ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 130px;
+    box-shadow: 0 0 80px rgba(0, 229, 255, 0.3);
+    animation: pulse 3s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+
+/* PRODUCTS */
+
+.products-section {
+    max-width: 1200px;
+    margin: auto;
+    padding: 100px 20px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-title p {
+    color: #00e5ff;
+    letter-spacing: 3px;
+}
+
+.section-title h2 {
+    font-size: 45px;
+    margin-top: 10px;
+}
+
+.search-box {
+    max-width: 500px;
+    margin: 0 auto 50px;
+    display: flex;
+    align-items: center;
+    background: #111;
+    padding: 15px;
+    border: 1px solid #333;
+    border-radius: 5px;
+}
+
+.search-box input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 16px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.product-card {
+    background: #101010;
+    padding: 30px;
+    border: 1px solid #222;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    border-color: #00e5ff;
+    box-shadow: 0 10px 40px rgba(0, 229, 255, 0.15);
+}
+
+.product-icon {
+    font-size: 60px;
+    margin-bottom: 20px;
+}
+
+.product-card h3 {
+    font-size: 23px;
+    margin-bottom: 15px;
+}
+
+.product-card p {
+    color: #999;
+    line-height: 1.6;
+}
+
+.product-card h4 {
+    color: #00e5ff;
+    font-size: 20px;
+    margin: 20px 0;
+}
+
+.product-card button,
+form button {
+    width: 100%;
+    padding: 13px;
+    background: #00e5ff;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+
+/* ABOUT */
+
+.about {
+    background: #0c0c0c;
+    padding: 100px max(20px, calc((100% - 1160px) / 2));
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+}
+
+.about h2 {
+    font-size: 50px;
+    margin-bottom: 25px;
+}
+
+.about > div > p:last-child {
+    color: #aaa;
+    line-height: 1.8;
+}
+
+.features {
+    display: grid;
+    gap: 20px;
+}
+
+.features div {
+    padding: 25px;
+    border-left: 2px solid #00e5ff;
+    background: #111;
+}
+
+.features strong {
+    color: #00e5ff;
+}
+
+.features h3 {
+    margin: 8px 0;
+}
+
+.features p {
+    color: #999;
+}
+
+
+/* CONTACT */
+
+.contact {
+    max-width: 1200px;
+    margin: auto;
+    padding: 100px 20px;
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+
+.contact-info {
+    background: #101010;
+    padding: 40px;
+    border: 1px solid #222;
+}
+
+.contact-info h3 {
+    font-size: 28px;
+    margin-bottom: 25px;
+}
+
+.contact-info p {
+    color: #aaa;
+    margin: 18px 0;
+}
+
+.whatsapp {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 14px 20px;
+    background: #00e5ff;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+form input,
+form textarea {
+    padding: 16px;
+    background: #101010;
+    border: 1px solid #333;
+    color: white;
+    outline: none;
+}
+
+form textarea {
+    resize: none;
+}
+
+
+/* FOOTER */
+
+footer {
+    background: #020202;
+    text-align: center;
+    padding: 50px 20px;
+    border-top: 1px solid #222;
+}
+
+footer p {
+    color: #777;
+    margin-top: 15px;
+}
+
+.copyright {
+    font-size: 12px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero {
+        text-align: center;
+        flex-direction: column;
+        gap: 60px;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .electric-circle {
+        width: 220px;
+        height: 220px;
+        font-size: 80px;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about,
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+
+    .section-title h2 {
+        font-size: 35px;
+    }
+}
+
+/* =================================
+   VOLTEX ANIMATIONS
+   ================================= */
+
+
+/* HERO TEXT ANIMATION */
+
+.hero-content {
+    animation: heroAppear 1.2s ease-out;
+}
+
+@keyframes heroAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* HERO TITLE */
+
+.hero h1 {
+    animation: titleGlow 3s infinite alternate;
+}
+
+@keyframes titleGlow {
+
+    from {
+        text-shadow: 0 0 5px transparent;
+    }
+
+    to {
+        text-shadow: 0 0 25px rgba(0, 229, 255, 0.5);
+    }
+
+}
+
+
+/* ELECTRIC CIRCLE */
+
+.electric-circle {
+    animation:
+        pulse 3s infinite,
+        electricGlow 1.5s infinite alternate;
+}
+
+@keyframes electricGlow {
+
+    from {
+        box-shadow:
+            0 0 20px rgba(0, 229, 255, 0.3);
+    }
+
+    to {
+        box-shadow:
+            0 0 70px rgba(0, 229, 255, 0.8);
+    }
+
+}
+
+
+/* BUTTON ANIMATION */
+
+.btn {
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.btn:hover {
+
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 10px 30px rgba(0, 229, 255, 0.4);
+
+}
+
+
+/* BUTTON PULSE */
+
+.btn:first-child {
+    animation: buttonPulse 2s infinite;
+}
+
+@keyframes buttonPulse {
+
+    0% {
+        box-shadow: 0 0 0 0 rgba(0, 229, 255, 0.5);
+    }
+
+    70% {
+        box-shadow: 0 0 0 15px rgba(0, 229, 255, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(0, 229, 255, 0);
+    }
+
+}
+
+
+/* PRODUCT CARDS */
+
+.product-card {
+
+    opacity: 0;
+
+    animation:
+        productAppear 0.8s ease forwards;
+
+}
+
+
+/* Different delays */
+
+.product-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.product-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.product-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.product-card:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.product-card:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+.product-card:nth-child(6) {
+    animation-delay: 0.6s;
+}
+
+
+@keyframes productAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+
+/* PRODUCT HOVER */
+
+.product-card:hover {
+
+    transform:
+        translateY(-12px)
+        scale(1.02);
+
+}
+
+
+/* PRODUCT ICON */
+
+.product-icon {
+
+    transition:
+        transform 0.4s ease;
+
+}
+
+.product-card:hover .product-icon {
+
+    transform:
+        scale(1.2)
+        rotate(8deg);
+
+}
+
+
+/* ADD TO CART BUTTON */
+
+.product-card button {
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+
+}
+
+.product-card button:hover {
+
+    transform: scale(1.05);
+
+    box-shadow:
+        0 0 20px rgba(0, 229, 255, 0.5);
+
+}
+
+
+/* NAVIGATION LINKS */
+
+.nav-links a {
+
+    position: relative;
+
+}
+
+.nav-links a::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -7px;
+
+    width: 0;
+    height: 2px;
+
+    background: #00e5ff;
+
+    transition: width 0.3s ease;
+
+}
+
+.nav-links a:hover::after {
+
+    width: 100%;
+
+}
+
+
+/* LOGO ELECTRIC EFFECT */
+
+.logo {
+
+    transition:
+        transform 0.3s ease;
+
+}
+
+.logo:hover {
+
+    transform: scale(1.05);
+
+    text-shadow:
+        0 0 15px rgba(0, 229, 255, 0.8);
+
+}
+
+
+/* CONTACT BOX */
+
+.contact-info {
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+
+}
+
+.contact-info:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 15px 40px rgba(0, 229, 255, 0.15);
+
+}
+
+
+/* FORM INPUT ANIMATION */
+
+form input,
+form textarea {
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+
+}
+
+form input:focus,
+form textarea:focus {
+
+    border-color: #00e5ff;
+
+    box-shadow:
+        0 0 15px rgba(0, 229, 255, 0.2);
+
+}
+
+
+/* WHATSAPP BUTTON */
+
+.whatsapp {
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+
+}
+
+.whatsapp:hover {
+
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 10px 25px rgba(0, 229, 255, 0.3);
+
+}
+
+
+/* FOOTER */
+
+footer {
+
+    transition:
+        border-color 0.4s ease;
+
+}
+
+footer:hover {
+
+    border-color: #00e5ff;
+
+}
+
+/* =========================================
+   VOLTEX SCROLL REVEAL ANIMATION
+   ========================================= */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(70px);
+    transition:
+        opacity 0.9s ease,
+        transform 0.9s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Reveal from the left */
+
+.reveal-left {
+    opacity: 0;
+    transform: translateX(-80px);
+    transition:
+        opacity 0.9s ease,
+        transform 0.9s ease;
+}
+
+.reveal-left.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+/* Reveal from the right */
+
+.reveal-right {
+    opacity: 0;
+    transform: translateX(80px);
+    transition:
+        opacity 0.9s ease,
+        transform 0.9s ease;
+}
+
+.reveal-right.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+/* Reveal with zoom */
+
+.reveal-zoom {
+    opacity: 0;
+    transform: scale(0.85);
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.reveal-zoom.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Make the background cover the entire webpage */
+html, body {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+In Uganda shillings
+
+🇺🇸
+
+US Dollar
+
+$
+
+🇺🇬
+
+Ugandan Shilling
+
+USh
+
+Give feedback
+
+From the prices shown in your screenshot, using the current USD→UGX rate:
+
+Google AI Plus — $0.49/month: about UGX 1,970 for the first month.
+Google AI Pro — $1.99/month: about UGX 8,000 for the first month.
+Google AI Ultra — $99.99/month: about UGX 402,000 per month.
+
+⚠️ The screenshot says the Plus and Pro prices are promotional for the first month; after that, they increase to the regular prices shown.
+
+format the formula of a background the fill the entire web page in vscode
+
+If you want a background image to fill the entire webpage in VS Code, put this in your style.css:
+
+/* Make the background cover the entire webpage */
+html, body {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+}
+
+#background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: -1;
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    color: white;
+    text-align: center;
+    padding-top: 200px;
+}
