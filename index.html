@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MULANGIRA ELECTRICALS| Powering Your World</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <header>
+        <nav class="navbar">
+
+            <div class="logo">
+                ⚡ MULANGIRA 
+                <span>ELECTRICALS</span>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <div class="cart">
+                🛒 <span id="cart-count">0</span>
+            </div>
+
+        </nav>
+    </header>
+
+
+    <!-- HERO SECTION -->
+    <section id="home" class="hero">
+
+        <div class="hero-content">
+
+            <p class="small-title">POWER • TECHNOLOGY • INNOVATION</p>
+
+            <h1>
+                Powering Your
+                <span>World.</span>
+            </h1>
+
+            <p class="hero-text">
+                Quality electrical and electronic products
+                designed to make your home, business and
+                life smarter.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#products" class="btn">Shop Now ⚡</a>
+                <a href="#contact" class="btn outline">Contact Us</a>
+            </div>
+
+        </div>
+
+        <div class="electric-circle">
+            ⚡
+        </div>
+
+    </section>
+
+
+    <!-- PRODUCTS -->
+    <section id="products" class="products-section">
+
+        <div class="section-title">
+            <p>OUR PRODUCTS</p>
+            <h2>Featured Electricals</h2>
+        </div>
+
+        <!-- SEARCH -->
+        <div class="search-box">
+            <input
+                type="text"
+                id="search"
+                placeholder="Search for a product..."
+                onkeyup="searchProducts()"
+            >
+            🔎
+        </div>
+
+
+        <div class="product-grid">
+
+            <!-- PRODUCT 1 -->
+            <div class="product-card">
+
+                <div class="product-icon"><img src="solar panel bulb.jpeg" alt="solar panel bulb" width="25%" height="25%"/></div>
+
+                <h3>LED Bulb</h3>
+
+                <p>
+                    Energy-saving LED bulb for homes
+                    and businesses.
+                </p>
+
+                <h4>UGX 8,000</h4>
+
+                <button onclick="addToCart()">
+                    Add to Cart
+                </button>
+
+            </div>
+
+
+            <!-- PRODUCT 2 -->
+            <div class="product-card">
+
+                <div class="product-icon">🔌</div>
+
+                <h3>Power Socket</h3>
+
+                <p>
+                    High-quality electrical wall socket
+                    for safe connections.
+                </p>
+
+                <h4>UGX 15,000</h4>
+
+                <button onclick="addToCart()">
+                    Add to Cart
+                </button>
+
+            </div>
+
+
+            <!-- PRODUCT 3 -->
+            <div class="product-card">
+
+                <div class="product-icon">🔋</div>
+
+                <h3>Rechargeable Battery</h3>
+
+                <p>
+                    Reliable rechargeable battery
+                    for different applications.
+                </p>
+
+                <h4>UGX 35,000</h4>
+
+                <button onclick="addToCart()">
+                    Add to Cart
+                </button>
+
+            </div>
+
+
+            <!-- PRODUCT 4 -->
+            <div class="product-card">
+
+                <div class="product-icon">🔦</div>
+
+                <h3>LED Torch</h3>
+
+                <p>
+                    Bright and durable LED torch
+                    for indoor and outdoor use.
+                </p>
+
+                <h4>UGX 25,000</h4>
+
+                <button onclick="addToCart()">
+                    Add to Cart
+                </button>
+
+            </div>
+
+
+            <!-- PRODUCT 5 -->
+            <div class="product-card">
+
+                <div class="product-icon">⚙️</div>
+
+                <h3>Electric Motor</h3>
+
+                <p>
+                    Efficient electric motor suitable
+                    for various machines.
+                </p>
+
+                <h4>UGX 180,000</h4>
+
+                <button onclick="addToCart()">
+                    Add to Cart
+                </button>
+
+            </div>
+
+
+            <!-- PRODUCT 6 -->
+            <div class="product-card">
+
+                <div class="product-icon">☀️</div>
+
+                <h3>Solar Panel</h3>
+
+                <p>
+                    Reliable solar power solution
+                    for homes and businesses.
+                </p>
+
+                <h4>UGX 450,000</h4>
+
+                <button onclick="addToCart()">
+                    Add to Cart
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section id="about" class="about">
+
+        <div>
+
+            <p class="small-title">WHY VOLTEX?</p>
+
+            <h2>
+                Electricity Meets
+                <span>Innovation.</span>
+            </h2>
+
+            <p>
+                MULANGIRA ELECTRICALS provides quality electrical
+                and electronic products at affordable prices.
+                We believe that good technology should be
+                reliable, accessible and easy to use.
+            </p>
+
+        </div>
+
+        <div class="features">
+
+            <div>
+                <strong>01</strong>
+                <h3>Quality</h3>
+                <p>Reliable products selected for durability.</p>
+            </div>
+
+            <div>
+                <strong>02</strong>
+                <h3>Affordable</h3>
+                <p>Competitive prices for everyone.</p>
+            </div>
+
+            <div>
+                <strong>03</strong>
+                <h3>Trusted</h3>
+                <p>Professional customer service.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact">
+
+        <div class="section-title">
+
+            <p>GET IN TOUCH</p>
+
+            <h2>Contact VOLTEX</h2>
+
+        </div>
+
+        <div class="contact-container">
+
+            <div class="contact-info">
+
+                <h3>Visit Our Shop</h3>
+
+                <p>📍 Kampala-Kissasi, Uganda</p>
+                <p>📞 +256 750241167</p>
+                <p>📧 info@voltexelectricals.com</p>
+
+                <a
+                    href="https://wa.me/256750241167"
+                    class="whatsapp"
+                >
+                    💬 Order on WhatsApp
+                </a>
+
+            </div>
+
+
+            <form>
+
+                <input
+                    type="text"
+                    placeholder="Your Name"
+                    required
+                >
+
+                <input
+                    type="email"
+                    placeholder="Your Email"
+                    required
+                >
+
+                <textarea
+                    placeholder="What are you looking for?"
+                    rows="5"
+                ></textarea>
+
+                <button type="submit">
+                    Send Message ⚡
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="logo">
+            ⚡ MULANGIRA 
+            <span>ELECTRICALS</span>
+        </div>
+
+        <p>
+            Powering your world, one connection at a time.
+        </p>
+
+        <p class="copyright">
+            © 2026 MULANGIRA ELECTRICALS. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+    <video autoplay muted loop playsinline id="background-video">
+    <source src="coffee.mp4" type="video/mp4">
+</video>
+
+<div class="content">
+    <h1>Welcome</h1>
+    <p>Electric Doctors At Your Service</p>
+</div>
+
+</body>
+</html>
